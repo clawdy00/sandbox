@@ -1,8 +1,6 @@
 # Custom AI agent sandbox — extra tools on top of the Nikolaik base
 FROM nikolaik/python-nodejs:python3.11-nodejs20
 
-USER root
-
 # Install core CLI tools the agent needs but aren't in the base image
 RUN apt-get update \
     && apt-get install -y --no-install-recommends \
