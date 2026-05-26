@@ -24,9 +24,6 @@ RUN YQ_VERSION="v4.47.1" \
     && chmod +x /usr/local/bin/yq \
     && yq --version
 
-# Switch to the non-root pn user (created by upstream but never activated — upstream runs as root)
-USER 1000
-
 # Verify toolchain
 RUN echo "=== Hermes Sandbox Toolchain ===" \
     && echo -n "gh: "     && gh --version | head -1 \
