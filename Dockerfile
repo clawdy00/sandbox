@@ -15,6 +15,7 @@ RUN apt-get update \
     && rm -rf /var/lib/apt/lists/*
 
 # Install yq (the Go binary — much faster than the Python pip version)
+# The release tarball contains ./yq_linux_amd64, ./yq_linux_arm64, etc.
 RUN YQ_VERSION="v4.47.1" \
     && ARCH=$(uname -m) \
     && case "$ARCH" in \
@@ -23,8 +24,8 @@ RUN YQ_VERSION="v4.47.1" \
          *) echo "Unsupported arch: $ARCH"; exit 1 ;; \
        esac \
     && curl -fsSL "https://github.com/mikefarah/yq/releases/download/${YQ_VERSION}/${BINARY}.tar.gz" \
-       | tar xz --transform 's|.*/yq|./yq|' -C /tmp/ \
-    && mv /tmp/yq /usr/local/bin/yq \
+       | tar xz -C /tmp/ \
+    && mv "/tmp/${BINARY}" /usr/local/bin/yq \
     && chmod +x /usr/local/bin/yq \
     && yq --version
 
