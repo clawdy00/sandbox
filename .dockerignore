@@ -1,0 +1,9 @@
+# Git
+.git
+.gitignore
+
+# Docs
+README.md
+
+# CI
+.github
