@@ -1,8 +1,4 @@
-# Hermes Agent Sandbox — custom image extending the recommended base
-# Build: docker build -t hermes-sandbox .
-# Hermes config: terminal.docker_image: "ghcr.io/clawdy00/hermes-sandbox:latest"
-# Public image — no auth needed to pull.
-
+# Custom AI agent sandbox — extra tools on top of the Nikolaik base
 FROM nikolaik/python-nodejs:python3.11-nodejs20
 
 USER root
