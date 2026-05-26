@@ -26,7 +26,7 @@ RUN YQ_VERSION="v4.47.1" \
     && chmod +x /usr/local/bin/yq \
     && yq --version
 
-# Restore the non-root user from the base image
+# Switch to the non-root pn user (created by upstream but never activated — upstream runs as root)
 USER 1000
 
 # Verify toolchain
