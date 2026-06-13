@@ -10,6 +10,7 @@ Extends `nikolaik/python-nodejs:python3.11-nodejs20` with:
 | `jq` | JSON processing |
 | `yq` | YAML processing (mikefarah/yq) |
 | `ripgrep` | Fast recursive search |
+| `cargo` / `rustc` / `rustup` | Stable Rust toolchain managed by rustup |
 
 ## Usage
 
